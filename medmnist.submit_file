@@ -10,8 +10,8 @@ JobBatchName = "medmnist-experiment-vit"
 
 # --------------------------------------------
 # Executable and its arguments
-executable    = $ENV(PWD)/miniconda3/envs/medmnist-mnt/bin/python
-arguments     = $ENV(PWD)/MedMNIST2D/train_and_eval_pytorch.py --data_flag pathmnist --model_flag vit --num_epochs 1 --resize --batch_size 8 --gpu_ids 0,1
+executable    = $ENV(PWD)/miniconda3/envs/med/bin/python
+arguments     = $ENV(PWD)/MedMNIST/medmnist/train_and_eval.py --data_flag pneumoniamnist --model_flag vit_timm --batch_size 64 --resize --as_rgb --pretrained --num_epochs 2 --lr 0.0001 --fine_tune --output_dir ./output
 
 # ---------------------------------------------------
 # Universe (vanilla, docker)
