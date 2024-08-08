@@ -10,6 +10,22 @@ from medmnist.info import INFO, DEFAULT_ROOT
 
 Metrics = namedtuple("Metrics", ["AUC", "ACC"])
 
+""" 
+Provides evaluation functionality for the MedMNIST datasets.
+
+This file defines the Evaluator class for evaluating model predictions on the MedMNIST datasets.
+It computes metrics such as AUC and accuracy for binary and multi-class classification tasks.
+The Evaluator class can also parse and evaluate standard result files.
+
+You can use the Evaluator class to evaluate your model's predictions. For example:
+
+from medmnist import Evaluator
+evaluator = Evaluator('pathmnist', 'test')
+metrics = evaluator.evaluate(y_score)
+print(metrics)
+
+
+"""
 
 class Evaluator:
     def __init__(self, flag, split, size=None, root=DEFAULT_ROOT):

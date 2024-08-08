@@ -5,7 +5,14 @@ import os
 from os.path import expanduser
 import warnings
 
+""" 
+Contains metadata about the MedMNIST datasets.
+This file contains metadata for all the MedMNIST datasets, such as their descriptions, URLs for downloading,
+MD5 checksums, tasks, labels, number of channels, number of samples, and licenses.
 
+You don't need to interact with this file directly. It's used internally by the medmnist package to get information about the datasets.
+
+"""
 def get_default_root():
     home = expanduser("~")
     dirpath = os.path.join(home, ".medmnist")

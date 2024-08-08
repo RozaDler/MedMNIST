@@ -1,6 +1,22 @@
 import medmnist
 from medmnist.info import INFO, DEFAULT_ROOT
 
+"""
+This file provides command-line interface (CLI) functionalities for the medmnist package.
+This file provides several CLI functions for interacting with the MedMNIST datasets:
+
+- available(): Lists all available datasets.
+- download(size=None, root=DEFAULT_ROOT): Downloads the datasets of specified sizes.
+- clean(root=DEFAULT_ROOT): Deletes all downloaded .npz files.
+- info(flag): Prints detailed information about a specific dataset.
+- save(flag, folder, postfix="png", root=DEFAULT_ROOT, download=False, size=None): Saves the dataset as standard figures (e.g., PNG or GIF).
+- evaluate(path): Parses and evaluates a standard result file.
+- test(save_folder="tmp/", root=DEFAULT_ROOT): For development only, tests various functions in this file.
+How to Interact:
+
+You can run these functions from the command line. For example, to download datasets, you can run:
+python -m medmnist --download
+"""
 
 def available():
     """List all available datasets."""
