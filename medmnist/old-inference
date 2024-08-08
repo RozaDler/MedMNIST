@@ -1,0 +1,66 @@
+# inference.py
+
+import argparse
+import torch
+from models import ResNet18, ResNet50, VisionTransformer, VisionTransformerHuggingFace
+from utility import get_datasets, get_dataloaders
+from medmnist import Evaluator
+import torch.nn as nn
+
+def evaluate(model, dataloader, criterion, evaluator, device):
+    model.eval()
+    total_loss = 0
+    y_score = []
+    with torch.no_grad():
+        for inputs, targets in dataloader:
+            inputs, targets = inputs.to(device), targets.to(device)
+            # print(f'Inference input shape: {inputs.shape}')  # Debugging statement
+            
+            outputs = model(inputs)
+            loss = criterion(outputs, targets)
+            total_loss += loss.item() * inputs.size(0)
+            y_score.append(outputs.cpu())
+    y_score = torch.cat(y_score).numpy()
+    auc, acc = evaluator.evaluate(y_score)
+    return total_loss / len(dataloader.dataset), auc, acc
+
+def main(args):
+    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+
+    train_dataset, val_dataset, test_dataset = get_datasets(args.data_flag, args.download, args.as_rgb, args.resize)
+    train_loader, val_loader, test_loader = get_dataloaders(train_dataset, val_dataset, test_dataset, args.batch_size)
+
+    n_channels = 3 if args.as_rgb else train_dataset.info['n_channels']
+    if args.model_flag == 'resnet18':
+        model = ResNet18(n_channels, len(train_dataset.info['label']), pretrained=args.pretrained)
+    elif args.model_flag == 'resnet50':
+        model = ResNet50(n_channels, len(train_dataset.info['label']), pretrained=args.pretrained)
+    elif args.model_flag == 'vit':
+        model = VisionTransformer(len(train_dataset.info['label']), pretrained=args.pretrained)
+    elif args.model_flag == 'vit_hf':
+        model = VisionTransformerHuggingFace(len(train_dataset.info['label']))
+    else:
+        raise ValueError("Unknown model flag")
+
+    model = model.to(device)
+    criterion = nn.CrossEntropyLoss()
+
+    if args.model_path:
+        model.load_state_dict(torch.load(args.model_path, map_location=device))
+
+    test_loss, test_auc, test_acc = evaluate(model, test_loader, criterion, Evaluator(args.data_flag, 'test'), device)
+    print(f'Test Loss: {test_loss:.4f}, Test AUC: {test_auc:.4f}, Test Acc: {test_acc:.4f}')
+
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--data_flag', type=str, required=True)
+    parser.add_argument('--model_flag', type=str, required=True, choices=['resnet18', 'resnet50', 'vit', 'vit_hf'])
+    parser.add_argument('--model_path', type=str, default=None)
+    parser.add_argument('--batch_size', type=int, default=32)
+    parser.add_argument('--download', action='store_true')
+    parser.add_argument('--resize', action='store_true')
+    parser.add_argument('--as_rgb', action='store_true')
+    parser.add_argument('--pretrained', action='store_true')
+    args = parser.parse_args()
+    
+    main(args)

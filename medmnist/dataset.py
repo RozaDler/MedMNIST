@@ -4,7 +4,18 @@ from PIL import Image
 from torch.utils.data import Dataset
 from medmnist.info import INFO, HOMEPAGE, DEFAULT_ROOT
 
+""" 
+Defines the dataset classes for the various MedMNIST datasets.
 
+This file defines the base dataset class MedMNIST and its subclasses for 2D (MedMNIST2D) and 3D (MedMNIST3D) datasets.
+Each specific dataset (e.g., PathMNIST, PneumoniaMNIST, etc.) is defined as a subclass of MedMNIST2D or MedMNIST3D.
+You can create instances of these classes to load specific datasets. For example:
+
+from medmnist import PathMNIST
+dataset = PathMNIST(split='train', download=True)
+
+
+"""
 class MedMNIST(Dataset):
     flag = ...
 

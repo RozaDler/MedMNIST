@@ -1,96 +1,47 @@
-import os
+# utils.py
+
+import medmnist
+from medmnist import INFO
+from torchvision import transforms
+from torch.utils.data import DataLoader
+import numpy as np
 from PIL import Image
-from tqdm import trange
-import skimage
-from skimage.util import montage as skimage_montage
 
+class ToRGB:
+    def __call__(self, img):
+        if img.shape[0] == 1:  # Only convert if it's a single-channel image
+            img = img.repeat(3, 1, 1)
+        return img
 
-SPLIT_DICT = {
-    "train": "TRAIN",
-    "val": "VALIDATION",
-    "test": "TEST"
-}  # compatible for Google AutoML Vision
+def get_datasets(data_flag, download, as_rgb, resize):
+    info = INFO[data_flag]
+    n_channels = 3 if as_rgb else info['n_channels']
 
+    DataClass = getattr(medmnist, info['python_class'])
 
-def save2d(imgs, labels, img_folder,
-           split, postfix, csv_path):
-    print(f"Saving {split} set to {img_folder}, csv_path={csv_path}...")
-    return save_fn(imgs, labels, img_folder,
-                   split, postfix, csv_path,
-                   load_fn=lambda arr: Image.fromarray(arr),
-                   save_fn=lambda img, path: img.save(path))
+    transform_list = []
+    if resize:
+        transform_list.append(transforms.Resize((224, 224)))
+    transform_list.append(transforms.ToTensor())
+    if as_rgb:
+        transform_list.append(ToRGB())
+    transform_list.append(transforms.Normalize(mean=[.5], std=[.5]))
 
+    transform = transforms.Compose(transform_list)
 
-def montage2d(imgs, n_channels, sel):
-    sel_img = imgs[sel]
+    train_dataset = DataClass(split='train', transform=transform, download=download, as_rgb=as_rgb)
+    val_dataset = DataClass(split='val', transform=transform, download=download, as_rgb=as_rgb)
+    test_dataset = DataClass(split='test', transform=transform, download=download, as_rgb=as_rgb)
 
-    # version 0.20.0 changes the kwarg `multichannel` to `channel_axis`
-    if skimage.__version__ >= "0.20.0":
-        montage_arr = skimage_montage(
-            sel_img, channel_axis=3 if n_channels == 3 else None)
-    else:
-        montage_arr = skimage_montage(sel_img, multichannel=(n_channels == 3))
-    montage_img = Image.fromarray(montage_arr)
+    # Debugging: Inspect the first image in the datasets
+    print(f"Train dataset first image shape: {train_dataset[0][0].shape}")
+    print(f"Val dataset first image shape: {val_dataset[0][0].shape}")
+    print(f"Test dataset first image shape: {test_dataset[0][0].shape}")
 
-    return montage_img
+    return train_dataset, val_dataset, test_dataset
 
-
-def save3d(imgs, labels, img_folder,
-           split, postfix, csv_path):
-    print(f"Saving {split} set to {img_folder}, csv_path={csv_path}...")
-    return save_fn(imgs, labels, img_folder,
-                   split, postfix, csv_path,
-                   load_fn=load_frames,
-                   save_fn=save_frames_as_gif)
-
-
-def montage3d(imgs, n_channels, sel):
-
-    montage_frames = []
-    for frame_i in range(imgs.shape[1]):
-        montage_frames.append(montage2d(imgs[:, frame_i], n_channels, sel))
-
-    return montage_frames
-
-
-def save_fn(imgs, labels, img_folder,
-            split, postfix, csv_path,
-            load_fn, save_fn):
-
-    assert imgs.shape[0] == labels.shape[0]
-
-    if not os.path.exists(img_folder):
-        os.makedirs(img_folder)
-
-    if csv_path is not None:
-        csv_file = open(csv_path, "a")
-
-    for idx in trange(imgs.shape[0]):
-
-        img = load_fn(imgs[idx])
-
-        label = labels[idx]
-
-        file_name = f"{split}{idx}_{'_'.join(map(str,label))}.{postfix}"
-
-        save_fn(img, os.path.join(img_folder, file_name))
-
-        if csv_path is not None:
-            line = f"{SPLIT_DICT[split]},{file_name},{','.join(map(str,label))}\n"
-            csv_file.write(line)
-
-    if csv_path is not None:
-        csv_file.close()
-
-
-def load_frames(arr):
-    frames = []
-    for frame in arr:
-        frames.append(Image.fromarray(frame))
-    return frames
-
-
-def save_frames_as_gif(frames, path, duration=200):
-    assert path.endswith(".gif")
-    frames[0].save(path, save_all=True, append_images=frames[1:],
-                   duration=duration, loop=0)
+def get_dataloaders(train_dataset, val_dataset, test_dataset, batch_size):
+    train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
+    val_loader = DataLoader(val_dataset, batch_size=batch_size, shuffle=False)
+    test_loader = DataLoader(test_dataset, batch_size=batch_size, shuffle=False)
+    return train_loader, val_loader, test_loader
