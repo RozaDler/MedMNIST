@@ -8,4 +8,4 @@ $conda install -n med -y pytorch tensorflow=2.16.1 torchvision pytorch-cuda=12.1
 source miniconda3/bin/activate med
 
 pip install medmnist ACSConv
-pip install timm
+
