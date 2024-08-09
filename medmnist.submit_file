@@ -10,13 +10,13 @@ JobBatchName = "medmnist-experiment-vit"
 
 # --------------------------------------------
 # Executable and its arguments
-executable    = $ENV(PWD)/miniconda3/envs/med/bin/python
-arguments     = $ENV(PWD)/MedMNIST/medmnist/train_and_eval.py --data_flag pneumoniamnist --model_flag vit_timm --batch_size 64 --resize --as_rgb --pretrained --num_epochs 2 --lr 0.0001 --fine_tune --output_dir ./output
+executable    = /workspace/miniconda3/envs/med/bin/python
+arguments     = /workspace/MedMNIST/medmnist/train_and_eval.py --data_flag pneumoniamnist --model_flag vit_timm --batch_size 64 --resize --as_rgb --pretrained --num_epochs 2 --lr 0.0001 --fine_tune --output_dir ./output
 
 # ---------------------------------------------------
 # Universe (vanilla, docker)
 universe         = docker
-docker_image     = nvidia/cuda:12.1.1-cudnn8-devel-ubuntu22.04
+docker_image     = container-registry.surrey.ac.uk/shared-containers/medmnist:latest
 
 # -------------------------------------------------
 # Event, out and error logs
