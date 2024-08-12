@@ -8,6 +8,7 @@ from copy import deepcopy
 from models import ResNet18, ResNet50, VisionTransformer, VisionTransformerHuggingFace, VisionTransformerTimm
 from utility import get_datasets, get_dataloaders
 from medmnist import Evaluator
+from medmnist.evaluator import getAUC, getACC 
 from tqdm import trange
 
 def train(model, train_loader, criterion, optimizer, device):
