@@ -11,7 +11,7 @@ JobBatchName = "medmnist-experiment-vit"
 # --------------------------------------------
 # Executable and its arguments
 executable    = /workspace/miniconda3/envs/med/bin/python
-arguments     = /workspace/MedMNIST/medmnist/train_and_eval.py --data_flag pneumoniamnist --model_flag vit_timm --batch_size 64 --resize --as_rgb --pretrained --num_epochs 2 --lr 0.0001 --fine_tune --output_dir ./output
+arguments     = /medmnist/train_and_eval.py --data_flag pneumoniamnist --model_flag vit_timm --batch_size 64 --resize --as_rgb --pretrained --num_epochs 2 --lr 0.0001 --fine_tune --output_dir ./output
 
 # ---------------------------------------------------
 # Universe (vanilla, docker)
@@ -27,7 +27,7 @@ error  = c$(cluster).p$(process).error
 # -----------------------------------
 # File Transfer, Input, Output
 should_transfer_files = YES
-
+transfer_input_files = $ENV(PWD)/medmnist
 transfer_output_files = ./
 
 # Make certain project spaces available in container
