@@ -10,6 +10,7 @@ from utility import get_datasets, get_dataloaders
 from medmnist import Evaluator
 from medmnist.evaluator import getAUC, getACC 
 from tqdm import tqdm, trange
+import wandb
 
 def train(model, train_loader, criterion, optimizer, device):
     model.train()
@@ -53,6 +54,9 @@ def evaluate(model, dataloader, criterion, evaluator, device, save_folder, run):
     auc = getAUC(y_true, y_score, evaluator.info['task'])
     acc = getACC(y_true, y_score, evaluator.info['task'])
 
+    # Log metrics to W&B
+    wandb.log({"val_loss": total_loss / len(dataloader.dataset), "val_auc": auc, "val_acc": acc})
+
     # Save evaluation results if save_folder is specified
     if save_folder:
         if not run:
@@ -65,6 +69,21 @@ def evaluate(model, dataloader, criterion, evaluator, device, save_folder, run):
     return total_loss / len(dataloader.dataset), auc, acc
 
 def main(args):
+    # Create a custom config dictionary
+    config = {
+        "dataset": args.data_flag,
+        "model": args.model_flag,
+        "epochs": args.num_epochs,
+        "batch_size": args.batch_size,
+        "learning_rate": args.lr,
+        "pretrained": args.pretrained,
+        "resize": args.resize
+    }
+
+        # Initialize W&B with the custom config
+    wandb.init(project="medMnist-experiments", entity="Vits", config=config)
+
+
     if not os.path.exists(args.output_dir):
         os.makedirs(args.output_dir)
         
@@ -109,6 +128,9 @@ def main(args):
         train_loss = train(model, train_loader, criterion, optimizer, device)
         val_loss, val_auc, val_acc = evaluate(model, val_loader, criterion, val_evaluator, device, save_folder=args.output_dir, run=f'epoch_{epoch+1}')
         
+        # Log training metrics to W&B
+        wandb.log({"train_loss": train_loss, "epoch": epoch+1})
+
         if val_auc > best_auc:
             best_auc = val_auc
             best_model = deepcopy(model)
@@ -122,6 +144,12 @@ def main(args):
     # Evaluate on test set with the best model
     test_loss, test_auc, test_acc = evaluate(best_model, test_loader, criterion, test_evaluator, device, save_folder=args.output_dir, run='test')
     print(f'Test Loss: {test_loss:.4f}, Test AUC: {test_auc:.4f}, Test Acc: {test_acc:.4f}')
+
+    # Final log for test results
+    wandb.log({"test_loss": test_loss, "test_auc": test_auc, "test_acc": test_acc})
+
+    # Finish the run
+    wandb.finish()
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
