@@ -9,7 +9,7 @@ from models import ResNet18, ResNet50, VisionTransformer, VisionTransformerHuggi
 from utility import get_datasets, get_dataloaders
 from medmnist import Evaluator
 from medmnist.evaluator import getAUC, getACC 
-from tqdm import trange
+from tqdm import tqdm, trange
 
 def train(model, train_loader, criterion, optimizer, device):
     model.train()
@@ -65,6 +65,9 @@ def evaluate(model, dataloader, criterion, evaluator, device, save_folder, run):
     return total_loss / len(dataloader.dataset), auc, acc
 
 def main(args):
+    if not os.path.exists(args.output_dir):
+        os.makedirs(args.output_dir)
+        
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     print(f"Using device: {device}")
 
