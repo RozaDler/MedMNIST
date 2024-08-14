@@ -2,13 +2,14 @@
 tmp*
 .DS_Store
 .vscode
+output/best_model.pth
 #comment
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
 *$py.class
 
-/output/best_model.pth
+
 
 # C extensions
 *.so
