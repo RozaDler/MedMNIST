@@ -1,0 +1,31 @@
+
+==========
+== CUDA ==
+==========
+
+CUDA Version 12.1.1
+
+Container image Copyright (c) 2016-2023, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+
+This container image and its contents are governed by the NVIDIA Deep Learning Container License.
+By pulling and using the container, you accept the terms and conditions of this license:
+https://developer.nvidia.com/ngc/nvidia-deep-learning-container-license
+
+A copy of this license is made available in this container at /NGC-DL-CONTAINER-LICENSE for your convenience.
+
+Using device: cuda
+Datasets created:
+Train dataset: True
+Val dataset: True
+Test dataset: True
+Epoch 1/10, Train Loss: 0.3940, Val Loss: 0.1331, Val AUC: 0.9867, Val Acc: 0.9294
+Epoch 2/10, Train Loss: 0.1168, Val Loss: 0.1518, Val AUC: 0.9913, Val Acc: 0.9637
+Epoch 3/10, Train Loss: 0.0791, Val Loss: 0.0848, Val AUC: 0.9937, Val Acc: 0.9618
+Epoch 4/10, Train Loss: 0.0680, Val Loss: 0.0889, Val AUC: 0.9951, Val Acc: 0.9523
+Epoch 5/10, Train Loss: 0.0532, Val Loss: 0.1053, Val AUC: 0.9946, Val Acc: 0.9714
+Epoch 6/10, Train Loss: 0.0492, Val Loss: 0.1200, Val AUC: 0.9962, Val Acc: 0.9504
+Epoch 7/10, Train Loss: 0.0334, Val Loss: 0.1707, Val AUC: 0.9954, Val Acc: 0.9256
+Epoch 8/10, Train Loss: 0.0314, Val Loss: 0.0839, Val AUC: 0.9949, Val Acc: 0.9637
+Epoch 9/10, Train Loss: 0.0436, Val Loss: 0.2589, Val AUC: 0.9934, Val Acc: 0.9504
+Epoch 10/10, Train Loss: 0.0321, Val Loss: 0.0994, Val AUC: 0.9922, Val Acc: 0.9676
+Test Loss: 0.4858, Test AUC: 0.9711, Test Acc: 0.9071
