@@ -1,5 +1,6 @@
 import argparse
 import os
+import sys
 import torch
 import torch.nn as nn
 import torch.optim as optim
@@ -31,7 +32,7 @@ def train(model, train_loader, criterion, optimizer, device):
     return total_loss / len(train_loader.dataset)
 
 # Updated evaluate function without default values for save_folder and run
-def evaluate(model, dataloader, criterion, evaluator, device, save_folder, run):
+def evaluate(model, dataloader, criterion, evaluator, device, save_folder, run, epoch=None):
     model.eval()
     total_loss = 0
     y_score = []
@@ -55,7 +56,7 @@ def evaluate(model, dataloader, criterion, evaluator, device, save_folder, run):
     acc = getACC(y_true, y_score, evaluator.info['task'])
 
     # Log metrics to W&B
-    wandb.log({"val_loss": total_loss / len(dataloader.dataset), "val_auc": auc, "val_acc": acc})
+    wandb.log({"val_loss": total_loss / len(dataloader.dataset), "val_auc": auc, "val_acc": acc, "epoch": epoch+1 if epoch else 0})
 
     # Save evaluation results if save_folder is specified
     if save_folder:
@@ -69,6 +70,8 @@ def evaluate(model, dataloader, criterion, evaluator, device, save_folder, run):
     return total_loss / len(dataloader.dataset), auc, acc
 
 def main(args):
+    wandb.login(key="2034da31c29a117a10e74550ff9896c178344596", relogin=True)
+
     # Create a custom config dictionary
     config = {
         "dataset": args.data_flag,
@@ -79,9 +82,14 @@ def main(args):
         "pretrained": args.pretrained,
         "resize": args.resize
     }
-
+    wandb_run_name = f"{args.data_flag}, {args.model_flag}, epochs {args.num_epochs}, BS {args.batch_size}, LR {args.lr}"
         # Initialize W&B with the custom config
-    wandb.init(project="medMnist-experiments", entity="Vits", config=config)
+    wandb.init(project="medMnist-experiments", 
+               entity="rozadler-rd-university-of-surrey", 
+               config=config, 
+               name=wandb_run_name,
+               settings=wandb.Settings(symlink=False)
+               ) #potentially add settings=wandb.Settings(symlink=False)
 
 
     if not os.path.exists(args.output_dir):
@@ -126,7 +134,7 @@ def main(args):
 
     for epoch in trange(args.num_epochs):
         train_loss = train(model, train_loader, criterion, optimizer, device)
-        val_loss, val_auc, val_acc = evaluate(model, val_loader, criterion, val_evaluator, device, save_folder=args.output_dir, run=f'epoch_{epoch+1}')
+        val_loss, val_auc, val_acc = evaluate(model, val_loader, criterion, val_evaluator, device, save_folder=args.output_dir, run=f'epoch_{epoch+1}', epoch=epoch)
         
         # Log training metrics to W&B
         wandb.log({"train_loss": train_loss, "epoch": epoch+1})

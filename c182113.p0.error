@@ -1,0 +1,93 @@
+/workspace/miniconda3/envs/med/lib/python3.11/site-packages/transformers/utils/hub.py:127: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+2024-08-14 03:18:45.886959: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: SSE4.1 SSE4.2 AVX AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+wandb: Appending key for api.wandb.ai to your netrc file: /user/HS401/ra01888/.netrc
+wandb: Currently logged in as: rozadler-rd (rozadler-rd-university-of-surrey). Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.17.6
+wandb: Run data is saved locally in /scratch/condor/dir_3502282/wandb/run-20240814_031850-8nn4fk9n
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run pneumoniamnist, vit_timm, epochs 5, BS 64, LR 0.0001
+wandb: ⭐️ View project at https://wandb.ai/rozadler-rd-university-of-surrey/medMnist-experiments
+wandb: 🚀 View run at https://wandb.ai/rozadler-rd-university-of-surrey/medMnist-experiments/runs/8nn4fk9n
+INFO:timm.models._builder:Loading pretrained weights from Hugging Face hub (timm/vit_base_patch16_224.augreg2_in21k_ft_in1k)
+INFO:timm.models._hub:[timm/vit_base_patch16_224.augreg2_in21k_ft_in1k] Safe alternative available for 'pytorch_model.bin' (as 'model.safetensors'). Loading weights using safetensors.
+INFO:timm.models._builder:Missing keys (head.weight, head.bias) discovered while loading pretrained weights. This is expected if model is being adapted.
+  0%|          | 0/5 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/9 [00:00<?, ?it/s][A
+Evaluating:  11%|█         | 1/9 [00:00<00:02,  3.90it/s][A
+Evaluating:  22%|██▏       | 2/9 [00:00<00:01,  3.97it/s][A
+Evaluating:  33%|███▎      | 3/9 [00:00<00:01,  3.99it/s][A
+Evaluating:  44%|████▍     | 4/9 [00:01<00:01,  4.00it/s][A
+Evaluating:  56%|█████▌    | 5/9 [00:01<00:01,  4.00it/s][A
+Evaluating:  67%|██████▋   | 6/9 [00:01<00:00,  4.00it/s][A
+Evaluating:  78%|███████▊  | 7/9 [00:01<00:00,  4.01it/s][A
+Evaluating:  89%|████████▉ | 8/9 [00:02<00:00,  4.01it/s][A
+                                                         [A 20%|██        | 1/5 [00:55<03:42, 55.55s/it]
+Evaluating:   0%|          | 0/9 [00:00<?, ?it/s][A
+Evaluating:  11%|█         | 1/9 [00:00<00:02,  3.99it/s][A
+Evaluating:  22%|██▏       | 2/9 [00:00<00:01,  4.00it/s][A
+Evaluating:  33%|███▎      | 3/9 [00:00<00:01,  4.00it/s][A
+Evaluating:  44%|████▍     | 4/9 [00:01<00:01,  3.99it/s][A
+Evaluating:  56%|█████▌    | 5/9 [00:01<00:01,  4.00it/s][A
+Evaluating:  67%|██████▋   | 6/9 [00:01<00:00,  3.99it/s][A
+Evaluating:  78%|███████▊  | 7/9 [00:01<00:00,  4.00it/s][A
+Evaluating:  89%|████████▉ | 8/9 [00:02<00:00,  4.00it/s][A
+                                                         [A 40%|████      | 2/5 [01:51<02:47, 55.86s/it]
+Evaluating:   0%|          | 0/9 [00:00<?, ?it/s][A
+Evaluating:  11%|█         | 1/9 [00:00<00:01,  4.03it/s][A
+Evaluating:  22%|██▏       | 2/9 [00:00<00:01,  4.03it/s][A
+Evaluating:  33%|███▎      | 3/9 [00:00<00:01,  4.02it/s][A
+Evaluating:  44%|████▍     | 4/9 [00:00<00:01,  4.01it/s][A
+Evaluating:  56%|█████▌    | 5/9 [00:01<00:00,  4.02it/s][A
+Evaluating:  67%|██████▋   | 6/9 [00:01<00:00,  4.02it/s][A
+Evaluating:  78%|███████▊  | 7/9 [00:01<00:00,  4.03it/s][A
+Evaluating:  89%|████████▉ | 8/9 [00:01<00:00,  4.03it/s][A
+                                                         [A 60%|██████    | 3/5 [02:47<01:52, 56.01s/it]
+Evaluating:   0%|          | 0/9 [00:00<?, ?it/s][A
+Evaluating:  11%|█         | 1/9 [00:00<00:01,  4.02it/s][A
+Evaluating:  22%|██▏       | 2/9 [00:00<00:01,  4.02it/s][A
+Evaluating:  33%|███▎      | 3/9 [00:00<00:01,  4.02it/s][A
+Evaluating:  44%|████▍     | 4/9 [00:00<00:01,  4.02it/s][A
+Evaluating:  56%|█████▌    | 5/9 [00:01<00:00,  4.03it/s][A
+Evaluating:  67%|██████▋   | 6/9 [00:01<00:00,  4.02it/s][A
+Evaluating:  78%|███████▊  | 7/9 [00:01<00:00,  4.02it/s][A
+Evaluating:  89%|████████▉ | 8/9 [00:01<00:00,  4.02it/s][A
+                                                         [A 80%|████████  | 4/5 [03:44<00:56, 56.14s/it]
+Evaluating:   0%|          | 0/9 [00:00<?, ?it/s][A
+Evaluating:  11%|█         | 1/9 [00:00<00:02,  3.98it/s][A
+Evaluating:  22%|██▏       | 2/9 [00:00<00:01,  3.99it/s][A
+Evaluating:  33%|███▎      | 3/9 [00:00<00:01,  4.02it/s][A
+Evaluating:  44%|████▍     | 4/9 [00:00<00:01,  4.04it/s][A
+Evaluating:  56%|█████▌    | 5/9 [00:01<00:00,  4.04it/s][A
+Evaluating:  67%|██████▋   | 6/9 [00:01<00:00,  4.05it/s][A
+Evaluating:  78%|███████▊  | 7/9 [00:01<00:00,  4.06it/s][A
+Evaluating:  89%|████████▉ | 8/9 [00:01<00:00,  4.05it/s][A
+                                                         [A100%|██████████| 5/5 [04:40<00:00, 56.22s/it]100%|██████████| 5/5 [04:40<00:00, 56.10s/it]
+Evaluating:   0%|          | 0/10 [00:00<?, ?it/s]Evaluating:  10%|█         | 1/10 [00:00<00:02,  3.91it/s]Evaluating:  20%|██        | 2/10 [00:00<00:02,  3.97it/s]Evaluating:  30%|███       | 3/10 [00:00<00:01,  3.99it/s]Evaluating:  40%|████      | 4/10 [00:01<00:01,  3.99it/s]Evaluating:  50%|█████     | 5/10 [00:01<00:01,  4.00it/s]Evaluating:  60%|██████    | 6/10 [00:01<00:01,  4.00it/s]Evaluating:  70%|███████   | 7/10 [00:01<00:00,  4.00it/s]Evaluating:  80%|████████  | 8/10 [00:02<00:00,  4.01it/s]Evaluating:  90%|█████████ | 9/10 [00:02<00:00,  4.02it/s]Evaluating: 100%|██████████| 10/10 [00:02<00:00,  4.34it/s]                                                           wandb: - 0.008 MB of 0.008 MB uploadedwandb: \ 0.011 MB of 0.016 MB uploadedwandb: | 0.011 MB of 0.016 MB uploadedwandb: / 0.016 MB of 0.016 MB uploadedwandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:      epoch ▁▂▄▄▅▅▇▇██▁
+wandb:   test_acc ▁
+wandb:   test_auc ▁
+wandb:  test_loss ▁
+wandb: train_loss █▃▂▂▁
+wandb:    val_acc ▆█▁▇█▆
+wandb:    val_auc ▃▆███▁
+wandb:   val_loss ▃▂▆▂▁█
+wandb: 
+wandb: Run summary:
+wandb:      epoch 0
+wandb:   test_acc 0.90865
+wandb:   test_auc 0.97513
+wandb:  test_loss 0.30554
+wandb: train_loss 0.07843
+wandb:    val_acc 0.90865
+wandb:    val_auc 0.97513
+wandb:   val_loss 0.30554
+wandb: 
+wandb: 🚀 View run pneumoniamnist, vit_timm, epochs 5, BS 64, LR 0.0001 at: https://wandb.ai/rozadler-rd-university-of-surrey/medMnist-experiments/runs/8nn4fk9n
+wandb: ⭐️ View project at: https://wandb.ai/rozadler-rd-university-of-surrey/medMnist-experiments
+wandb: Synced 6 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20240814_031850-8nn4fk9n/logs
+wandb: WARNING The new W&B backend becomes opt-out in version 0.18.0; try it out with `wandb.require("core")`! See https://wandb.me/wandb-core for more information.
