@@ -8,7 +8,7 @@ __pycache__/
 *.py[cod]
 *$py.class
 
-output/best_model.pth
+/output/best_model.pth
 
 # C extensions
 *.so
