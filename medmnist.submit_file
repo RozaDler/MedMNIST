@@ -11,7 +11,7 @@ JobBatchName = "medmnist-experiment-vit"
 # --------------------------------------------
 # Executable and its arguments
 executable    = /workspace/miniconda3/envs/med/bin/python
-arguments     = medmnist/train_and_eval.py --data_flag pneumoniamnist --model_flag vit_timm --batch_size 64 --resize --as_rgb --pretrained --num_epochs 10 --lr 0.0001 --fine_tune --output_dir output 
+arguments     = medmnist/train_and_eval.py --data_flag pathmnist --model_flag medclip_vit --batch_size 64 --resize --num_epochs 35 --lr 0.0001 --fine_tune --output_dir output 
 
 # ---------------------------------------------------
 # Universe (vanilla, docker)
@@ -43,17 +43,17 @@ requirements = (CUDAGlobalMemoryMb > 4500)
 # Resources
 request_GPUs     = 1
 # this needs to be specified for the AI@Surrey cluster if requesting a GPU
-+GPUMem          = 10000  
++GPUMem          = 36000  
 request_CPUs   = 2
 # tailor the number of CPUs to your needs - check epoch time or GPU power usage via 
 # https://wandb.ai/site to know that you're not staving the GPU
 request_memory   = 12G
 
 #This job will complete in less than 1 hour
-+JobRunTime = 2
++JobRunTime = 1
 
 #This job can checkpoint
-+CanCheckpoint = false
++CanCheckpoint = true
 
 # -----------------------------------
 # Queue commands

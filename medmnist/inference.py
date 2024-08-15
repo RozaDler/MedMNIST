@@ -59,6 +59,8 @@ def main(args):
         model = VisionTransformerTimm(len(train_dataset.info['label']), pretrained=args.pretrained)
     elif args.model_flag == 'vit_hf':
         model = VisionTransformerHuggingFace(len(train_dataset.info['label']), pretrained=args.pretrained)
+    elif args.model_flag == 'medclip_vit':
+        model = MedCLIPVisionOnly(len(train_dataset.info['label']))
     else:
         raise ValueError("Unknown model flag")
 
@@ -75,7 +77,7 @@ def main(args):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--data_flag', type=str, required=True)
-    parser.add_argument('--model_flag', type=str, required=True, choices=['resnet18', 'resnet50', 'vit', 'vit_hf', 'vit_timm'])
+    parser.add_argument('--model_flag', type=str, required=True, choices=['resnet18', 'resnet50', 'vit', 'vit_hf', 'vit_timm', 'medclip_vit'])
     parser.add_argument('--model_path', type=str, default=None)
     parser.add_argument('--batch_size', type=int, default=32)
     parser.add_argument('--download', action='store_true')
