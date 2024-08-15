@@ -5,7 +5,6 @@ tmp*
 output/best_model.pth
 pretrained/
 medclip_vit_weights.zip
-medclip_vit_weights/*
 #comment
 # Byte-compiled / optimized / DLL files
 __pycache__/
