@@ -3,6 +3,7 @@ tmp*
 .DS_Store
 .vscode
 output/best_model.pth
+pytorch_model.*
 pretrained/
 medclip_vit_weights.zip
 #comment
