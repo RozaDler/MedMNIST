@@ -1,0 +1,210 @@
+/workspace/miniconda3/envs/med/lib/python3.11/site-packages/transformers/utils/hub.py:127: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+2024-08-15 07:13:26.010718: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: SSE4.1 SSE4.2 AVX AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+wandb: Appending key for api.wandb.ai to your netrc file: /user/HS401/ra01888/.netrc
+wandb: Currently logged in as: rozadler-rd (rozadler-rd-university-of-surrey). Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.17.6
+wandb: Run data is saved locally in /scratch/condor/dir_1775933/wandb/run-20240815_071329-7v8l2fel
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run pathmnist, medclip_vit, epochs 35, BS 64, LR 0.0001
+wandb: ⭐️ View project at https://wandb.ai/rozadler-rd-university-of-surrey/medMnist-experiments
+wandb: 🚀 View run at https://wandb.ai/rozadler-rd-university-of-surrey/medMnist-experiments/runs/7v8l2fel
+/workspace/miniconda3/envs/med/lib/python3.11/site-packages/transformers/tokenization_utils_base.py:1601: FutureWarning: `clean_up_tokenization_spaces` was not set. It will be set to `True` by default. This behavior will be depracted in transformers v4.45, and will be then set to `False` by default. For more details check this issue: https://github.com/huggingface/transformers/issues/31884
+  warnings.warn(
+  0%|          | 0/35 [00:00<?, ?it/s]
+Evaluating:   0%|          | 0/157 [00:00<?, ?it/s][A
+Evaluating:   1%|          | 1/157 [00:00<01:00,  2.59it/s][A
+Evaluating:   1%|▏         | 2/157 [00:00<00:37,  4.13it/s][A
+Evaluating:   2%|▏         | 3/157 [00:00<00:30,  5.12it/s][A
+Evaluating:   3%|▎         | 4/157 [00:00<00:26,  5.74it/s][A
+Evaluating:   3%|▎         | 5/157 [00:00<00:24,  6.16it/s][A
+Evaluating:   4%|▍         | 6/157 [00:01<00:23,  6.46it/s][A
+Evaluating:   4%|▍         | 7/157 [00:01<00:22,  6.67it/s][A
+Evaluating:   5%|▌         | 8/157 [00:01<00:21,  6.79it/s][A
+Evaluating:   6%|▌         | 9/157 [00:01<00:21,  6.90it/s][A
+Evaluating:   6%|▋         | 10/157 [00:01<00:21,  6.96it/s][A
+Evaluating:   7%|▋         | 11/157 [00:01<00:20,  7.00it/s][A
+Evaluating:   8%|▊         | 12/157 [00:01<00:20,  7.03it/s][A
+Evaluating:   8%|▊         | 13/157 [00:02<00:20,  7.05it/s][A
+Evaluating:   9%|▉         | 14/157 [00:02<00:20,  7.06it/s][A
+Evaluating:  10%|▉         | 15/157 [00:02<00:20,  7.07it/s][A
+Evaluating:  10%|█         | 16/157 [00:02<00:19,  7.07it/s][A
+Evaluating:  11%|█         | 17/157 [00:02<00:19,  7.07it/s][A
+Evaluating:  11%|█▏        | 18/157 [00:02<00:19,  7.07it/s][A
+Evaluating:  12%|█▏        | 19/157 [00:02<00:19,  7.07it/s][A
+Evaluating:  13%|█▎        | 20/157 [00:03<00:19,  7.07it/s][A
+Evaluating:  13%|█▎        | 21/157 [00:03<00:19,  7.06it/s][A
+Evaluating:  14%|█▍        | 22/157 [00:03<00:19,  7.06it/s][A
+Evaluating:  15%|█▍        | 23/157 [00:03<00:18,  7.06it/s][A
+Evaluating:  15%|█▌        | 24/157 [00:03<00:18,  7.05it/s][A
+Evaluating:  16%|█▌        | 25/157 [00:03<00:18,  7.06it/s][A
+Evaluating:  17%|█▋        | 26/157 [00:03<00:18,  7.07it/s][A
+Evaluating:  17%|█▋        | 27/157 [00:04<00:18,  7.07it/s][A
+Evaluating:  18%|█▊        | 28/157 [00:04<00:18,  7.06it/s][A
+Evaluating:  18%|█▊        | 29/157 [00:04<00:18,  7.05it/s][A
+Evaluating:  19%|█▉        | 30/157 [00:04<00:18,  7.02it/s][A
+Evaluating:  20%|█▉        | 31/157 [00:04<00:17,  7.04it/s][A
+Evaluating:  20%|██        | 32/157 [00:04<00:17,  7.06it/s][A
+Evaluating:  21%|██        | 33/157 [00:04<00:17,  7.06it/s][A
+Evaluating:  22%|██▏       | 34/157 [00:05<00:17,  7.06it/s][A
+Evaluating:  22%|██▏       | 35/157 [00:05<00:17,  7.06it/s][A
+Evaluating:  23%|██▎       | 36/157 [00:05<00:17,  7.07it/s][A
+Evaluating:  24%|██▎       | 37/157 [00:05<00:16,  7.07it/s][A
+Evaluating:  24%|██▍       | 38/157 [00:05<00:16,  7.04it/s][A
+Evaluating:  25%|██▍       | 39/157 [00:05<00:16,  7.04it/s][A
+Evaluating:  25%|██▌       | 40/157 [00:05<00:16,  7.04it/s][A
+Evaluating:  26%|██▌       | 41/157 [00:06<00:16,  7.03it/s][A
+Evaluating:  27%|██▋       | 42/157 [00:06<00:16,  7.05it/s][A
+Evaluating:  27%|██▋       | 43/157 [00:06<00:16,  7.05it/s][A
+Evaluating:  28%|██▊       | 44/157 [00:06<00:15,  7.06it/s][A
+Evaluating:  29%|██▊       | 45/157 [00:06<00:15,  7.08it/s][A
+Evaluating:  29%|██▉       | 46/157 [00:06<00:15,  7.08it/s][A
+Evaluating:  30%|██▉       | 47/157 [00:06<00:15,  7.09it/s][A
+Evaluating:  31%|███       | 48/157 [00:07<00:15,  7.09it/s][A
+Evaluating:  31%|███       | 49/157 [00:07<00:15,  7.10it/s][A
+Evaluating:  32%|███▏      | 50/157 [00:07<00:15,  7.11it/s][A
+Evaluating:  32%|███▏      | 51/157 [00:07<00:14,  7.09it/s][A
+Evaluating:  33%|███▎      | 52/157 [00:07<00:14,  7.09it/s][A
+Evaluating:  34%|███▍      | 53/157 [00:07<00:14,  7.10it/s][A
+Evaluating:  34%|███▍      | 54/157 [00:07<00:14,  7.11it/s][A
+Evaluating:  35%|███▌      | 55/157 [00:08<00:14,  7.11it/s][A
+Evaluating:  36%|███▌      | 56/157 [00:08<00:14,  7.11it/s][A
+Evaluating:  36%|███▋      | 57/157 [00:08<00:14,  7.11it/s][A
+Evaluating:  37%|███▋      | 58/157 [00:08<00:13,  7.12it/s][A
+Evaluating:  38%|███▊      | 59/157 [00:08<00:13,  7.11it/s][A
+Evaluating:  38%|███▊      | 60/157 [00:08<00:13,  7.12it/s][A
+Evaluating:  39%|███▉      | 61/157 [00:08<00:13,  7.10it/s][A
+Evaluating:  39%|███▉      | 62/157 [00:09<00:13,  7.10it/s][A
+Evaluating:  40%|████      | 63/157 [00:09<00:13,  7.10it/s][A
+Evaluating:  41%|████      | 64/157 [00:09<00:13,  7.10it/s][A
+Evaluating:  41%|████▏     | 65/157 [00:09<00:12,  7.10it/s][A
+Evaluating:  42%|████▏     | 66/157 [00:09<00:12,  7.11it/s][A
+Evaluating:  43%|████▎     | 67/157 [00:09<00:12,  7.10it/s][A
+Evaluating:  43%|████▎     | 68/157 [00:09<00:12,  7.11it/s][A
+Evaluating:  44%|████▍     | 69/157 [00:09<00:12,  7.10it/s][A
+Evaluating:  45%|████▍     | 70/157 [00:10<00:12,  7.10it/s][A
+Evaluating:  45%|████▌     | 71/157 [00:10<00:12,  7.10it/s][A
+Evaluating:  46%|████▌     | 72/157 [00:10<00:11,  7.10it/s][A
+Evaluating:  46%|████▋     | 73/157 [00:10<00:11,  7.09it/s][A
+Evaluating:  47%|████▋     | 74/157 [00:10<00:11,  7.09it/s][A
+Evaluating:  48%|████▊     | 75/157 [00:10<00:11,  7.09it/s][A
+Evaluating:  48%|████▊     | 76/157 [00:10<00:11,  7.09it/s][A
+Evaluating:  49%|████▉     | 77/157 [00:11<00:11,  7.09it/s][A
+Evaluating:  50%|████▉     | 78/157 [00:11<00:11,  7.09it/s][A
+Evaluating:  50%|█████     | 79/157 [00:11<00:11,  7.08it/s][A
+Evaluating:  51%|█████     | 80/157 [00:11<00:10,  7.08it/s][A
+Evaluating:  52%|█████▏    | 81/157 [00:11<00:10,  7.08it/s][A
+Evaluating:  52%|█████▏    | 82/157 [00:11<00:10,  7.07it/s][A
+Evaluating:  53%|█████▎    | 83/157 [00:11<00:10,  7.07it/s][A
+Evaluating:  54%|█████▎    | 84/157 [00:12<00:10,  7.07it/s][A
+Evaluating:  54%|█████▍    | 85/157 [00:12<00:10,  7.07it/s][A
+Evaluating:  55%|█████▍    | 86/157 [00:12<00:10,  7.06it/s][A
+Evaluating:  55%|█████▌    | 87/157 [00:12<00:09,  7.06it/s][A
+Evaluating:  56%|█████▌    | 88/157 [00:12<00:09,  7.07it/s][A
+Evaluating:  57%|█████▋    | 89/157 [00:12<00:09,  7.07it/s][A
+Evaluating:  57%|█████▋    | 90/157 [00:12<00:09,  7.08it/s][A
+Evaluating:  58%|█████▊    | 91/157 [00:13<00:09,  7.08it/s][A
+Evaluating:  59%|█████▊    | 92/157 [00:13<00:09,  7.07it/s][A
+Evaluating:  59%|█████▉    | 93/157 [00:13<00:09,  7.07it/s][A
+Evaluating:  60%|█████▉    | 94/157 [00:13<00:08,  7.08it/s][A
+Evaluating:  61%|██████    | 95/157 [00:13<00:08,  7.07it/s][A
+Evaluating:  61%|██████    | 96/157 [00:13<00:08,  7.06it/s][A
+Evaluating:  62%|██████▏   | 97/157 [00:13<00:08,  7.07it/s][A
+Evaluating:  62%|██████▏   | 98/157 [00:14<00:08,  7.08it/s][A
+Evaluating:  63%|██████▎   | 99/157 [00:14<00:08,  7.09it/s][A
+Evaluating:  64%|██████▎   | 100/157 [00:14<00:08,  7.09it/s][A
+Evaluating:  64%|██████▍   | 101/157 [00:14<00:07,  7.09it/s][A
+Evaluating:  65%|██████▍   | 102/157 [00:14<00:07,  7.10it/s][A
+Evaluating:  66%|██████▌   | 103/157 [00:14<00:07,  7.11it/s][A
+Evaluating:  66%|██████▌   | 104/157 [00:14<00:07,  7.11it/s][A
+Evaluating:  67%|██████▋   | 105/157 [00:15<00:07,  7.11it/s][A
+Evaluating:  68%|██████▊   | 106/157 [00:15<00:07,  7.11it/s][A
+Evaluating:  68%|██████▊   | 107/157 [00:15<00:07,  7.11it/s][A
+Evaluating:  69%|██████▉   | 108/157 [00:15<00:06,  7.12it/s][A
+Evaluating:  69%|██████▉   | 109/157 [00:15<00:06,  7.12it/s][A
+Evaluating:  70%|███████   | 110/157 [00:15<00:06,  7.10it/s][A
+Evaluating:  71%|███████   | 111/157 [00:15<00:06,  7.10it/s][A
+Evaluating:  71%|███████▏  | 112/157 [00:16<00:06,  7.10it/s][A
+Evaluating:  72%|███████▏  | 113/157 [00:16<00:06,  7.10it/s][A
+Evaluating:  73%|███████▎  | 114/157 [00:16<00:06,  7.11it/s][A
+Evaluating:  73%|███████▎  | 115/157 [00:16<00:05,  7.11it/s][A
+Evaluating:  74%|███████▍  | 116/157 [00:16<00:05,  7.11it/s][A
+Evaluating:  75%|███████▍  | 117/157 [00:16<00:05,  7.10it/s][A
+Evaluating:  75%|███████▌  | 118/157 [00:16<00:05,  7.09it/s][A
+Evaluating:  76%|███████▌  | 119/157 [00:17<00:05,  7.09it/s][A
+Evaluating:  76%|███████▋  | 120/157 [00:17<00:05,  7.09it/s][A
+Evaluating:  77%|███████▋  | 121/157 [00:17<00:05,  7.09it/s][A
+Evaluating:  78%|███████▊  | 122/157 [00:17<00:04,  7.09it/s][A
+Evaluating:  78%|███████▊  | 123/157 [00:17<00:04,  7.09it/s][A
+Evaluating:  79%|███████▉  | 124/157 [00:17<00:04,  7.09it/s][A
+Evaluating:  80%|███████▉  | 125/157 [00:17<00:04,  7.08it/s][A
+Evaluating:  80%|████████  | 126/157 [00:18<00:04,  7.08it/s][A
+Evaluating:  81%|████████  | 127/157 [00:18<00:04,  7.08it/s][A
+Evaluating:  82%|████████▏ | 128/157 [00:18<00:04,  7.08it/s][A
+Evaluating:  82%|████████▏ | 129/157 [00:18<00:03,  7.09it/s][A
+Evaluating:  83%|████████▎ | 130/157 [00:18<00:03,  7.10it/s][A
+Evaluating:  83%|████████▎ | 131/157 [00:18<00:03,  7.09it/s][A
+Evaluating:  84%|████████▍ | 132/157 [00:18<00:03,  7.09it/s][A
+Evaluating:  85%|████████▍ | 133/157 [00:19<00:03,  7.09it/s][A
+Evaluating:  85%|████████▌ | 134/157 [00:19<00:03,  7.08it/s][A
+Evaluating:  86%|████████▌ | 135/157 [00:19<00:03,  7.09it/s][A
+Evaluating:  87%|████████▋ | 136/157 [00:19<00:02,  7.08it/s][A
+Evaluating:  87%|████████▋ | 137/157 [00:19<00:02,  7.08it/s][A
+Evaluating:  88%|████████▊ | 138/157 [00:19<00:02,  7.09it/s][A
+Evaluating:  89%|████████▊ | 139/157 [00:19<00:02,  7.10it/s][A
+Evaluating:  89%|████████▉ | 140/157 [00:20<00:02,  7.08it/s][A
+Evaluating:  90%|████████▉ | 141/157 [00:20<00:02,  7.09it/s][A
+Evaluating:  90%|█████████ | 142/157 [00:20<00:02,  7.09it/s][A
+Evaluating:  91%|█████████ | 143/157 [00:20<00:01,  7.08it/s][A
+Evaluating:  92%|█████████▏| 144/157 [00:20<00:01,  7.09it/s][A
+Evaluating:  92%|█████████▏| 145/157 [00:20<00:01,  7.09it/s][A
+Evaluating:  93%|█████████▎| 146/157 [00:20<00:01,  7.09it/s][A
+Evaluating:  94%|█████████▎| 147/157 [00:20<00:01,  7.10it/s][A
+Evaluating:  94%|█████████▍| 148/157 [00:21<00:01,  7.10it/s][A
+Evaluating:  95%|█████████▍| 149/157 [00:21<00:01,  7.09it/s][A
+Evaluating:  96%|█████████▌| 150/157 [00:21<00:00,  7.09it/s][A
+Evaluating:  96%|█████████▌| 151/157 [00:21<00:00,  7.10it/s][A
+Evaluating:  97%|█████████▋| 152/157 [00:21<00:00,  7.11it/s][A
+Evaluating:  97%|█████████▋| 153/157 [00:21<00:00,  7.11it/s][A
+Evaluating:  98%|█████████▊| 154/157 [00:21<00:00,  7.11it/s][A
+Evaluating:  99%|█████████▊| 155/157 [00:22<00:00,  7.11it/s][A
+Evaluating:  99%|█████████▉| 156/157 [00:22<00:00,  7.10it/s][A
+                                                             [A  0%|          | 0/35 [09:04<?, ?it/s]
+Traceback (most recent call last):
+  File "/scratch/condor/dir_1775933/medmnist/train_and_eval.py", line 228, in <module>
+    main(args)
+  File "/scratch/condor/dir_1775933/medmnist/train_and_eval.py", line 190, in main
+    save_checkpoint({
+  File "/scratch/condor/dir_1775933/medmnist/train_and_eval.py", line 20, in save_checkpoint
+    torch.save(state, "best_" + filename)
+  File "/workspace/miniconda3/envs/med/lib/python3.11/site-packages/torch/serialization.py", line 651, in save
+    with _open_zipfile_writer(f) as opened_zipfile:
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/miniconda3/envs/med/lib/python3.11/site-packages/torch/serialization.py", line 525, in _open_zipfile_writer
+    return container(name_or_buffer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/miniconda3/envs/med/lib/python3.11/site-packages/torch/serialization.py", line 496, in __init__
+    super().__init__(torch._C.PyTorchFileWriter(self.name))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Parent directory best_output does not exist.
+wandb: - 0.008 MB of 0.008 MB uploadedwandb: \ 0.008 MB of 0.016 MB uploadedwandb: | 0.016 MB of 0.016 MB uploadedwandb: 
+wandb: Run history:
+wandb:      epoch ▁█
+wandb: train_loss ▁
+wandb:    val_acc ▁
+wandb:    val_auc ▁
+wandb:   val_loss ▁
+wandb: 
+wandb: Run summary:
+wandb:      epoch 1
+wandb: train_loss 0.3572
+wandb:    val_acc 0.93343
+wandb:    val_auc 0.99039
+wandb:   val_loss 0.1982
+wandb: 
+wandb: 🚀 View run pathmnist, medclip_vit, epochs 35, BS 64, LR 0.0001 at: https://wandb.ai/rozadler-rd-university-of-surrey/medMnist-experiments/runs/7v8l2fel
+wandb: ⭐️ View project at: https://wandb.ai/rozadler-rd-university-of-surrey/medMnist-experiments
+wandb: Synced 6 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20240815_071329-7v8l2fel/logs
+wandb: WARNING The new W&B backend becomes opt-out in version 0.18.0; try it out with `wandb.require("core")`! See https://wandb.me/wandb-core for more information.
