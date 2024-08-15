@@ -1,0 +1,25 @@
+
+==========
+== CUDA ==
+==========
+
+CUDA Version 12.1.1
+
+Container image Copyright (c) 2016-2023, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+
+This container image and its contents are governed by the NVIDIA Deep Learning Container License.
+By pulling and using the container, you accept the terms and conditions of this license:
+https://developer.nvidia.com/ngc/nvidia-deep-learning-container-license
+
+A copy of this license is made available in this container at /NGC-DL-CONTAINER-LICENSE for your convenience.
+
+Using device: cuda
+Datasets created:
+Train dataset: True
+Val dataset: True
+Test dataset: True
+Epoch 1/5, Train Loss: 0.2904, Val Loss: 0.1298, Val AUC: 0.9913, Val Acc: 0.9370
+Epoch 2/5, Train Loss: 0.1127, Val Loss: 0.1063, Val AUC: 0.9955, Val Acc: 0.9637
+Epoch 3/5, Train Loss: 0.0966, Val Loss: 0.0882, Val AUC: 0.9969, Val Acc: 0.8893
+Epoch 4/5, Train Loss: 0.0754, Val Loss: 0.1399, Val AUC: 0.9965, Val Acc: 0.8931
+Epoch 5/5, Train Loss: 0.0586, Val Loss: 0.1032, Val AUC: 0.9962, Val Acc: 0.9542
