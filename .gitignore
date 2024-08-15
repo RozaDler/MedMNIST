@@ -3,8 +3,10 @@ tmp*
 .DS_Store
 .vscode
 output/best_model.pth
+output/checkpoint.pth.tar
 pretrained/
 medclip_vit_weights.zip
+medclip_vit_weights/pytorch_model.bin
 
 #comment
 # Byte-compiled / optimized / DLL files
