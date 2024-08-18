@@ -10,7 +10,7 @@ from medclip import MedCLIPProcessor
 import requests
 import zipfile
 import os
-from acsconv.converters import ACSConverter, Conv2_5dConverter, Conv3dConverter  # Import conversion classes
+# from acsconv.converters import ACSConverter, Conv2_5dConverter, Conv3dConverter  # Import conversion classes
 from torch.nn import BatchNorm2d as SynchronizedBatchNorm2d
 from torch.nn import BatchNorm3d as SynchronizedBatchNorm3d
 
@@ -79,14 +79,14 @@ class ResNet3D18(nn.Module):
         return self.model(x)
 
 # Function to convert models to ACSConv, Conv2_5d, or Conv3d
-def convert_to_acs_or_conv3d(model, conv_type='ACSConv'):
-    if conv_type == 'ACSConv':
-        model = ACSConverter(model)
-    elif conv_type == 'Conv2_5d':
-        model = Conv2_5dConverter(model)
-    elif conv_type == 'Conv3d':
-        model = Conv3dConverter(model)
-    return model
+# def convert_to_acs_or_conv3d(model, conv_type='ACSConv'):
+#     if conv_type == 'ACSConv':
+#         model = ACSConverter(model)
+#     elif conv_type == 'Conv2_5d':
+#         model = Conv2_5dConverter(model)
+#     elif conv_type == 'Conv3d':
+#         model = Conv3dConverter(model)
+#     return model
 
 class VisionTransformer(nn.Module):
     def __init__(self, num_classes, pretrained=False):

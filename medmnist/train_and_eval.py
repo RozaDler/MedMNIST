@@ -6,7 +6,7 @@ import torch.nn as nn
 import torch.optim as optim
 from torch.optim.lr_scheduler import MultiStepLR
 from copy import deepcopy
-from models import ResNet18, ResNet50, VisionTransformer, VisionTransformerHuggingFace, VisionTransformerTimm, MedCLIPViTModel, ResNet3D18, convert_to_acs_or_conv3d, ViT3D
+from models import ResNet18, ResNet50, VisionTransformer, VisionTransformerHuggingFace, VisionTransformerTimm, MedCLIPViTModel, ResNet3D18, ViT3D
 from utility import get_datasets, get_dataloaders
 from medmnist import Evaluator
 from medmnist.evaluator import getAUC, getACC 
@@ -179,11 +179,11 @@ def main(args):
 
      # Initialize model
     if args.model_flag == 'resnet18':
-        if "3d" in args.data_flag:
-            model = ResNet3D18(n_channels, num_classes)
-            model = convert_to_acs_or_conv3d(model, conv_type=args.conv_type)
-        else:
-            model = ResNet18(n_channels, num_classes)
+        # if "3d" in args.data_flag:
+        #     model = ResNet3D18(n_channels, num_classes)
+        #     model = convert_to_acs_or_conv3d(model, conv_type=args.conv_type)
+        # else:
+        model = ResNet18(n_channels, num_classes)
     elif args.model_flag == 'vit_timm_3d':
         model = ViT3D(num_classes, pretrained=args.pretrained)
     elif args.model_flag == 'resnet50':

@@ -1,0 +1,60 @@
+{
+    "os": "macOS-14.5-arm64-i386-64bit",
+    "python": "3.8.19",
+    "heartbeatAt": "2024-08-18T00:27:53.472044",
+    "startedAt": "2024-08-18T00:27:52.984700",
+    "docker": null,
+    "cuda": null,
+    "args": [
+        "--data_flag",
+        "pneumoniamnist",
+        "--model_flag",
+        "medclip_vit",
+        "--batch_size",
+        "64",
+        "--resize",
+        "--num_epochs",
+        "2",
+        "--lr",
+        "0.0001",
+        "--fine_tune",
+        "--output_dir",
+        "output"
+    ],
+    "state": "running",
+    "program": "train_and_eval.py",
+    "codePathLocal": "train_and_eval.py",
+    "codePath": "medmnist/train_and_eval.py",
+    "git": {
+        "remote": "git@github.com:RozaDler/MedMNIST.git",
+        "commit": "05bb9f399acfc9b106eaceabb0fd1be011b36ca2"
+    },
+    "email": "rozadler.rd@gmail.com",
+    "root": "/Users/roza/Dissertation/Projects/MedMNIST",
+    "host": "Rozas-MacBook-Pro.local",
+    "username": "roza",
+    "executable": "/Users/roza/miniconda3/envs/medmnist-env/bin/python",
+    "cpu_count": 8,
+    "cpu_count_logical": 8,
+    "cpu_freq": {
+        "current": 3228,
+        "min": 600,
+        "max": 3228
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 3228,
+            "min": 600,
+            "max": 3228
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 460.4317207336426,
+            "used": 12.414390563964844
+        }
+    },
+    "memory": {
+        "total": 16.0
+    }
+}
