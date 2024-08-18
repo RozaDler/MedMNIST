@@ -10,7 +10,7 @@ from medclip import MedCLIPProcessor
 import requests
 import zipfile
 import os
-from acsconv.converters import ACSConverter, Conv2_5dConverter, Conv3dConverter  # Import conversion classes
+# from acsconv.converters import ACSConverter, Conv2_5dConverter, Conv3dConverter  # Import conversion classes
 from torch.nn import BatchNorm2d as SynchronizedBatchNorm2d
 from torch.nn import BatchNorm3d as SynchronizedBatchNorm3d
 
