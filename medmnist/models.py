@@ -3,12 +3,17 @@ from torchvision.models import resnet18, resnet50, vit_b_16, ViT_B_16_Weights
 from transformers import ViTModel, ViTFeatureExtractor
 import torch
 from timm import create_model
+# from einops import rearrange
 import logging
 from medclip import MedCLIPModel, MedCLIPVisionModelViT, MedCLIPVisionModel  
 from medclip import MedCLIPProcessor
 import requests
 import zipfile
 import os
+from acsconv.converters import ACSConverter, Conv2_5dConverter, Conv3dConverter  # Import conversion classes
+from torch.nn import BatchNorm2d as SynchronizedBatchNorm2d
+from torch.nn import BatchNorm3d as SynchronizedBatchNorm3d
+
 
 # Initialize logger
 logging.basicConfig(level=logging.INFO)
@@ -41,6 +46,48 @@ class ResNet50(nn.Module):
     def forward(self, x):
         return self.model(x)
 
+class ResNet3D18(nn.Module):
+    def __init__(self, in_channels, num_classes):
+        super(ResNet3D18, self).__init__()
+        # Load the pre-defined resnet18 model
+        self.model = resnet18(pretrained=False)
+
+        # Modify the first convolutional layer to work with 3D inputs
+        self.model.conv1 = nn.Conv3d(
+            in_channels, 64,
+            kernel_size=7,
+            stride=2,
+            padding=3,
+            bias=False
+        )
+
+        # Replace all BatchNorm2d layers with BatchNorm3d
+        self.model.bn1 = nn.BatchNorm3d(64)
+        for layer_name in ['layer1', 'layer2', 'layer3', 'layer4']:
+            for block in getattr(self.model, layer_name):
+                if hasattr(block, 'bn1'):
+                    block.bn1 = nn.BatchNorm3d(block.bn1.num_features)
+                if hasattr(block, 'bn2'):
+                    block.bn2 = nn.BatchNorm3d(block.bn2.num_features)
+                if hasattr(block, 'bn3'):  # For Bottleneck blocks
+                    block.bn3 = nn.BatchNorm3d(block.bn3.num_features)
+
+        # Modify the fully connected layer to match the number of output classes
+        self.model.fc = nn.Linear(self.model.fc.in_features, num_classes)
+
+    def forward(self, x):
+        return self.model(x)
+
+# Function to convert models to ACSConv, Conv2_5d, or Conv3d
+def convert_to_acs_or_conv3d(model, conv_type='ACSConv'):
+    if conv_type == 'ACSConv':
+        model = ACSConverter(model)
+    elif conv_type == 'Conv2_5d':
+        model = Conv2_5dConverter(model)
+    elif conv_type == 'Conv3d':
+        model = Conv3dConverter(model)
+    return model
+
 class VisionTransformer(nn.Module):
     def __init__(self, num_classes, pretrained=False):
         super(VisionTransformer, self).__init__()
@@ -59,6 +106,43 @@ class VisionTransformerTimm(nn.Module):
 
     def forward(self, x):
         return self.vit(x)
+
+#vit timm for 3D
+# class ViT3D(nn.Module):
+#     def __init__(self, num_classes, pretrained, patch_size=16, embedding_dim=768):
+#         super(ViT3D, self).__init__()
+#         self.patch_size = patch_size
+#         self.embedding_dim = embedding_dim
+#         self.num_patches = (28 // patch_size) ** 3  # Assuming the input is 28x28x28
+#         self.projection = nn.Linear(patch_size ** 3, embedding_dim)
+#         self.vit = create_model('vit_base_patch16_224', pretrained=pretrained, num_classes=num_classes)
+
+#     def forward(self, x):
+#         # Convert 3D volume into patches
+#         patches = self._generate_patches(x)
+
+#         # Project the patches into the embedding space
+#         embeddings = self.projection(patches)
+
+#         # Feed into the ViT model
+#         return self.vit(embeddings)
+
+#     def _generate_patches(self, x):
+#         # Create patches from the 3D volume
+#         B, C, D, H, W = x.shape
+#         x = rearrange(x, 'b c (d p1) (h p2) (w p3) -> b (d h w) (c p1 p2 p3)', p1=self.patch_size, p2=self.patch_size, p3=self.patch_size)
+#         return x
+
+class ViT3D(nn.Module):
+    def __init__(self, num_classes, pretrained):
+        super(ViT3D, self).__init__()
+        self.vit = create_model('vit_base_patch16_224', pretrained=pretrained, num_classes=0)  # Set num_classes to 0 to remove default head
+        self.head = nn.Linear(self.vit.num_features, num_classes)  # Define your custom head
+
+    def forward(self, x):
+        x = self.vit(x)
+        x = self.head(x)  # Apply the custom head
+        return x
 
 
 class VisionTransformerHuggingFace(nn.Module):

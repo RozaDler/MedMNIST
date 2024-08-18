@@ -1,0 +1,64 @@
+wandb_version: 1
+
+dataset:
+  desc: null
+  value: vesselmnist3d
+model:
+  desc: null
+  value: resnet18
+epochs:
+  desc: null
+  value: 100
+batch_size:
+  desc: null
+  value: 32
+learning_rate:
+  desc: null
+  value: 0.001
+resize:
+  desc: null
+  value: false
+_wandb:
+  desc: null
+  value:
+    python_version: 3.11.5
+    cli_version: 0.17.6
+    framework: huggingface
+    huggingface_version: 4.44.0
+    is_jupyter_run: false
+    is_kaggle_kernel: false
+    start_time: 1723788068
+    t:
+      1:
+      - 1
+      - 2
+      - 3
+      - 5
+      - 11
+      - 41
+      - 49
+      - 53
+      - 55
+      - 63
+      2:
+      - 1
+      - 2
+      - 3
+      - 5
+      - 11
+      - 41
+      - 49
+      - 53
+      - 55
+      - 63
+      3:
+      - 2
+      - 13
+      - 16
+      - 23
+      4: 3.11.5
+      5: 0.17.6
+      6: 4.44.0
+      8:
+      - 5
+      13: linux-x86_64

@@ -1,143 +1,0 @@
-/workspace/miniconda3/envs/med/lib/python3.11/site-packages/transformers/utils/hub.py:127: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
-  warnings.warn(
-2024-08-14 03:45:23.391378: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
-To enable the following instructions: SSE4.1 SSE4.2 AVX AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
-wandb: Appending key for api.wandb.ai to your netrc file: /user/HS401/ra01888/.netrc
-wandb: Currently logged in as: rozadler-rd (rozadler-rd-university-of-surrey). Use `wandb login --relogin` to force relogin
-wandb: Tracking run with wandb version 0.17.6
-wandb: Run data is saved locally in /scratch/condor/dir_3503846/wandb/run-20240814_034526-ae67agqo
-wandb: Run `wandb offline` to turn off syncing.
-wandb: Syncing run pneumoniamnist, vit_timm, epochs 10, BS 64, LR 0.0001
-wandb: ⭐️ View project at https://wandb.ai/rozadler-rd-university-of-surrey/medMnist-experiments
-wandb: 🚀 View run at https://wandb.ai/rozadler-rd-university-of-surrey/medMnist-experiments/runs/ae67agqo
-INFO:timm.models._builder:Loading pretrained weights from Hugging Face hub (timm/vit_base_patch16_224.augreg2_in21k_ft_in1k)
-INFO:timm.models._hub:[timm/vit_base_patch16_224.augreg2_in21k_ft_in1k] Safe alternative available for 'pytorch_model.bin' (as 'model.safetensors'). Loading weights using safetensors.
-INFO:timm.models._builder:Missing keys (head.weight, head.bias) discovered while loading pretrained weights. This is expected if model is being adapted.
-  0%|          | 0/10 [00:00<?, ?it/s]
-Evaluating:   0%|          | 0/9 [00:00<?, ?it/s][A
-Evaluating:  11%|█         | 1/9 [00:00<00:02,  3.99it/s][A
-Evaluating:  22%|██▏       | 2/9 [00:00<00:01,  3.98it/s][A
-Evaluating:  33%|███▎      | 3/9 [00:00<00:01,  3.99it/s][A
-Evaluating:  44%|████▍     | 4/9 [00:01<00:01,  4.00it/s][A
-Evaluating:  56%|█████▌    | 5/9 [00:01<00:00,  4.00it/s][A
-Evaluating:  67%|██████▋   | 6/9 [00:01<00:00,  4.04it/s][A
-Evaluating:  78%|███████▊  | 7/9 [00:01<00:00,  4.05it/s][A
-Evaluating:  89%|████████▉ | 8/9 [00:01<00:00,  4.06it/s][A
-                                                         [A 10%|█         | 1/10 [00:55<08:17, 55.22s/it]
-Evaluating:   0%|          | 0/9 [00:00<?, ?it/s][A
-Evaluating:  11%|█         | 1/9 [00:00<00:01,  4.10it/s][A
-Evaluating:  22%|██▏       | 2/9 [00:00<00:01,  4.08it/s][A
-Evaluating:  33%|███▎      | 3/9 [00:00<00:01,  4.09it/s][A
-Evaluating:  44%|████▍     | 4/9 [00:00<00:01,  4.09it/s][A
-Evaluating:  56%|█████▌    | 5/9 [00:01<00:00,  4.06it/s][A
-Evaluating:  67%|██████▋   | 6/9 [00:01<00:00,  4.05it/s][A
-Evaluating:  78%|███████▊  | 7/9 [00:01<00:00,  4.04it/s][A
-Evaluating:  89%|████████▉ | 8/9 [00:01<00:00,  4.03it/s][A
-                                                         [A 20%|██        | 2/10 [01:51<07:25, 55.74s/it]
-Evaluating:   0%|          | 0/9 [00:00<?, ?it/s][A
-Evaluating:  11%|█         | 1/9 [00:00<00:01,  4.04it/s][A
-Evaluating:  22%|██▏       | 2/9 [00:00<00:01,  4.02it/s][A
-Evaluating:  33%|███▎      | 3/9 [00:00<00:01,  4.00it/s][A
-Evaluating:  44%|████▍     | 4/9 [00:00<00:01,  4.01it/s][A
-Evaluating:  56%|█████▌    | 5/9 [00:01<00:00,  4.01it/s][A
-Evaluating:  67%|██████▋   | 6/9 [00:01<00:00,  4.01it/s][A
-Evaluating:  78%|███████▊  | 7/9 [00:01<00:00,  4.02it/s][A
-Evaluating:  89%|████████▉ | 8/9 [00:01<00:00,  4.01it/s][A
-                                                         [A 30%|███       | 3/10 [02:47<06:31, 55.99s/it]
-Evaluating:   0%|          | 0/9 [00:00<?, ?it/s][A
-Evaluating:  11%|█         | 1/9 [00:00<00:01,  4.07it/s][A
-Evaluating:  22%|██▏       | 2/9 [00:00<00:01,  4.07it/s][A
-Evaluating:  33%|███▎      | 3/9 [00:00<00:01,  4.08it/s][A
-Evaluating:  44%|████▍     | 4/9 [00:00<00:01,  4.06it/s][A
-Evaluating:  56%|█████▌    | 5/9 [00:01<00:00,  4.06it/s][A
-Evaluating:  67%|██████▋   | 6/9 [00:01<00:00,  4.06it/s][A
-Evaluating:  78%|███████▊  | 7/9 [00:01<00:00,  4.06it/s][A
-Evaluating:  89%|████████▉ | 8/9 [00:01<00:00,  4.07it/s][A
-                                                         [A 40%|████      | 4/10 [03:43<05:36, 56.05s/it]
-Evaluating:   0%|          | 0/9 [00:00<?, ?it/s][A
-Evaluating:  11%|█         | 1/9 [00:00<00:02,  3.97it/s][A
-Evaluating:  22%|██▏       | 2/9 [00:00<00:01,  3.99it/s][A
-Evaluating:  33%|███▎      | 3/9 [00:00<00:01,  3.97it/s][A
-Evaluating:  44%|████▍     | 4/9 [00:01<00:01,  3.98it/s][A
-Evaluating:  56%|█████▌    | 5/9 [00:01<00:01,  3.97it/s][A
-Evaluating:  67%|██████▋   | 6/9 [00:01<00:00,  3.98it/s][A
-Evaluating:  78%|███████▊  | 7/9 [00:01<00:00,  3.98it/s][A
-Evaluating:  89%|████████▉ | 8/9 [00:02<00:00,  3.98it/s][A
-                                                         [A 50%|█████     | 5/10 [04:38<04:38, 55.70s/it]
-Evaluating:   0%|          | 0/9 [00:00<?, ?it/s][A
-Evaluating:  11%|█         | 1/9 [00:00<00:01,  4.01it/s][A
-Evaluating:  22%|██▏       | 2/9 [00:00<00:01,  3.99it/s][A
-Evaluating:  33%|███▎      | 3/9 [00:00<00:01,  4.00it/s][A
-Evaluating:  44%|████▍     | 4/9 [00:01<00:01,  3.99it/s][A
-Evaluating:  56%|█████▌    | 5/9 [00:01<00:01,  3.99it/s][A
-Evaluating:  67%|██████▋   | 6/9 [00:01<00:00,  3.99it/s][A
-Evaluating:  78%|███████▊  | 7/9 [00:01<00:00,  3.98it/s][A
-Evaluating:  89%|████████▉ | 8/9 [00:02<00:00,  3.99it/s][A
-                                                         [A 60%|██████    | 6/10 [05:35<03:43, 55.94s/it]
-Evaluating:   0%|          | 0/9 [00:00<?, ?it/s][A
-Evaluating:  11%|█         | 1/9 [00:00<00:02,  3.99it/s][A
-Evaluating:  22%|██▏       | 2/9 [00:00<00:01,  3.99it/s][A
-Evaluating:  33%|███▎      | 3/9 [00:00<00:01,  3.99it/s][A
-Evaluating:  44%|████▍     | 4/9 [00:01<00:01,  3.99it/s][A
-Evaluating:  56%|█████▌    | 5/9 [00:01<00:01,  4.00it/s][A
-Evaluating:  67%|██████▋   | 6/9 [00:01<00:00,  3.99it/s][A
-Evaluating:  78%|███████▊  | 7/9 [00:01<00:00,  4.00it/s][A
-Evaluating:  89%|████████▉ | 8/9 [00:02<00:00,  3.99it/s][A
-                                                         [A 70%|███████   | 7/10 [06:30<02:47, 55.71s/it]
-Evaluating:   0%|          | 0/9 [00:00<?, ?it/s][A
-Evaluating:  11%|█         | 1/9 [00:00<00:01,  4.00it/s][A
-Evaluating:  22%|██▏       | 2/9 [00:00<00:01,  3.99it/s][A
-Evaluating:  33%|███▎      | 3/9 [00:00<00:01,  3.99it/s][A
-Evaluating:  44%|████▍     | 4/9 [00:01<00:01,  3.99it/s][A
-Evaluating:  56%|█████▌    | 5/9 [00:01<00:01,  3.98it/s][A
-Evaluating:  67%|██████▋   | 6/9 [00:01<00:00,  3.99it/s][A
-Evaluating:  78%|███████▊  | 7/9 [00:01<00:00,  3.98it/s][A
-Evaluating:  89%|████████▉ | 8/9 [00:02<00:00,  3.98it/s][A
-                                                         [A 80%|████████  | 8/10 [07:25<01:51, 55.57s/it]
-Evaluating:   0%|          | 0/9 [00:00<?, ?it/s][A
-Evaluating:  11%|█         | 1/9 [00:00<00:01,  4.01it/s][A
-Evaluating:  22%|██▏       | 2/9 [00:00<00:01,  3.99it/s][A
-Evaluating:  33%|███▎      | 3/9 [00:00<00:01,  3.99it/s][A
-Evaluating:  44%|████▍     | 4/9 [00:01<00:01,  3.99it/s][A
-Evaluating:  56%|█████▌    | 5/9 [00:01<00:01,  3.99it/s][A
-Evaluating:  67%|██████▋   | 6/9 [00:01<00:00,  3.99it/s][A
-Evaluating:  78%|███████▊  | 7/9 [00:01<00:00,  3.99it/s][A
-Evaluating:  89%|████████▉ | 8/9 [00:02<00:00,  3.99it/s][A
-                                                         [A 90%|█████████ | 9/10 [08:20<00:55, 55.47s/it]
-Evaluating:   0%|          | 0/9 [00:00<?, ?it/s][A
-Evaluating:  11%|█         | 1/9 [00:00<00:01,  4.01it/s][A
-Evaluating:  22%|██▏       | 2/9 [00:00<00:01,  3.99it/s][A
-Evaluating:  33%|███▎      | 3/9 [00:00<00:01,  3.99it/s][A
-Evaluating:  44%|████▍     | 4/9 [00:01<00:01,  3.99it/s][A
-Evaluating:  56%|█████▌    | 5/9 [00:01<00:01,  3.99it/s][A
-Evaluating:  67%|██████▋   | 6/9 [00:01<00:00,  3.99it/s][A
-Evaluating:  78%|███████▊  | 7/9 [00:01<00:00,  3.99it/s][A
-Evaluating:  89%|████████▉ | 8/9 [00:02<00:00,  3.99it/s][A
-                                                         [A100%|██████████| 10/10 [09:16<00:00, 55.39s/it]100%|██████████| 10/10 [09:16<00:00, 55.62s/it]
-Evaluating:   0%|          | 0/10 [00:00<?, ?it/s]Evaluating:  10%|█         | 1/10 [00:00<00:02,  4.00it/s]Evaluating:  20%|██        | 2/10 [00:00<00:01,  4.02it/s]Evaluating:  30%|███       | 3/10 [00:00<00:01,  4.02it/s]Evaluating:  40%|████      | 4/10 [00:00<00:01,  4.02it/s]Evaluating:  50%|█████     | 5/10 [00:01<00:01,  4.02it/s]Evaluating:  60%|██████    | 6/10 [00:01<00:00,  4.02it/s]Evaluating:  70%|███████   | 7/10 [00:01<00:00,  4.02it/s]Evaluating:  80%|████████  | 8/10 [00:01<00:00,  4.02it/s]Evaluating:  90%|█████████ | 9/10 [00:02<00:00,  4.02it/s]Evaluating: 100%|██████████| 10/10 [00:02<00:00,  4.32it/s]                                                           wandb: - 0.008 MB of 0.008 MB uploadedwandb: \ 0.008 MB of 0.016 MB uploadedwandb: | 0.008 MB of 0.016 MB uploadedwandb: / 0.016 MB of 0.016 MB uploadedwandb:                                                                                
-wandb: 
-wandb: Run history:
-wandb:      epoch ▁▂▂▂▃▃▄▄▅▅▅▅▆▆▇▇▇▇██▁
-wandb:   test_acc ▁
-wandb:   test_auc ▁
-wandb:  test_loss ▁
-wandb: train_loss █▃▂▂▁▁▁▁▁▁
-wandb:    val_acc ▃▇▇▆█▆▃▇▆█▁
-wandb:    val_auc ▅▇▇█████▇▇▁
-wandb:   val_loss ▂▂▁▁▁▂▃▁▄▁█
-wandb: 
-wandb: Run summary:
-wandb:      epoch 0
-wandb:   test_acc 0.90705
-wandb:   test_auc 0.97107
-wandb:  test_loss 0.48583
-wandb: train_loss 0.03205
-wandb:    val_acc 0.90705
-wandb:    val_auc 0.97107
-wandb:   val_loss 0.48583
-wandb: 
-wandb: 🚀 View run pneumoniamnist, vit_timm, epochs 10, BS 64, LR 0.0001 at: https://wandb.ai/rozadler-rd-university-of-surrey/medMnist-experiments/runs/ae67agqo
-wandb: ⭐️ View project at: https://wandb.ai/rozadler-rd-university-of-surrey/medMnist-experiments
-wandb: Synced 6 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
-wandb: Find logs at: ./wandb/run-20240814_034526-ae67agqo/logs
-wandb: WARNING The new W&B backend becomes opt-out in version 0.18.0; try it out with `wandb.require("core")`! See https://wandb.me/wandb-core for more information.

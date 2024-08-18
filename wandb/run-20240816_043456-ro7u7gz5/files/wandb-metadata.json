@@ -1,0 +1,381 @@
+{
+    "os": "Linux-4.18.0-372.32.1.el8_6.x86_64-x86_64-with-glibc2.35",
+    "python": "3.11.5",
+    "heartbeatAt": "2024-08-16T04:34:56.834604",
+    "startedAt": "2024-08-16T04:34:56.347614",
+    "docker": null,
+    "cuda": null,
+    "args": [
+        "--data_flag",
+        "vesselmnist3d",
+        "--model_flag",
+        "resnet18",
+        "--batch_size",
+        "64",
+        "--num_epochs",
+        "50",
+        "--lr",
+        "0.001",
+        "--fine_tune",
+        "--output_dir",
+        "output",
+        "--size",
+        "28",
+        "--shape_transform",
+        "--conv_type",
+        "ACSConv"
+    ],
+    "state": "running",
+    "program": "/scratch/condor/dir_1553425/medmnist/train_and_eval.py",
+    "codePathLocal": "medmnist/train_and_eval.py",
+    "codePath": "medmnist/train_and_eval.py",
+    "host": "ra01888-182721.0-aisurrey21.surrey.ac.uk",
+    "username": "331933",
+    "executable": "/workspace/miniconda3/envs/med/bin/python",
+    "cpu_count": 64,
+    "cpu_count_logical": 64,
+    "cpu_freq": {
+        "current": 3025.243953124999,
+        "min": 0.0,
+        "max": 0.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 3675.294,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2794.685,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2794.685,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3716.446,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2794.685,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2794.685,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2794.685,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2794.685,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2794.685,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2794.685,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3717.689,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2794.685,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3717.307,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2794.685,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2794.685,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2794.685,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3717.311,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3717.312,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3717.516,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3717.718,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2794.685,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2794.685,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2794.685,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2794.685,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2794.685,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2794.685,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2794.685,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2794.685,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3716.468,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2794.685,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2794.685,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2794.685,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2794.685,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2794.685,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3717.328,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2794.685,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2794.685,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3716.928,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2794.685,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2794.685,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2794.685,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2794.685,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3717.731,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2794.685,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2794.685,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2794.685,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2794.685,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2794.685,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2794.685,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2794.685,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2794.685,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3717.338,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3717.145,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2794.685,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2794.685,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2794.685,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2794.685,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3717.536,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2794.685,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2794.685,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3717.347,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2794.685,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2794.685,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2794.685,
+            "min": 0.0,
+            "max": 0.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 231.44650650024414,
+            "used": 178.04069137573242
+        }
+    },
+    "gpu": "NVIDIA A100-SXM4-80GB",
+    "gpu_count": 1,
+    "gpu_devices": [
+        {
+            "name": "NVIDIA A100-SXM4-80GB",
+            "memory_total": 85899345920
+        }
+    ],
+    "memory": {
+        "total": 503.4962501525879
+    }
+}
