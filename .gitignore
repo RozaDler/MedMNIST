@@ -4,6 +4,7 @@ tmp*
 .vscode
 output/best_model.pth
 output/checkpoint.pth.tar
+output/best_checkpoint.pth.tar
 pretrained/
 medclip_vit_weights.zip
 medclip_vit_weights/pytorch_model.bin
